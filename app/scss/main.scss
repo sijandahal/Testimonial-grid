@@ -70,8 +70,8 @@ p {
     .box-1 {
       background-color: $Moderate-violet;
       background-image: url(/images/bg-pattern-quotation.svg);
-      background-repeat: no-repeat;
-      background-position: right 55px top;
+      background-repeat: no-repeat;background-position: right 74px top 3px;
+      background-size: 115px;
       color: $White;
       grid-area: box-1;
 
@@ -100,15 +100,20 @@ p {
       h3 {
         color: $Verydarkblackishblue;
       }
+
+      h2 {
+        color: $Verydarkgrayishblue;
+      }
     }
 
     .box-4 {
       background-color: $White;
       h3 {
-        color: $Verydarkgrayishblue;
-      }
-      h2 {
         color: $Verydarkblackishblue;
+      }
+
+      h2 {
+        color: $Verydarkgrayishblue;
       }
     }
     .box-5 {
@@ -131,7 +136,7 @@ p {
 }
 
 .box {
-  padding: 35px;
+  padding: 20px 35px;
 }
 
 @media only screen and (min-width: 1199px) {
@@ -187,16 +192,13 @@ p {
 }
 @media only screen and (max-width: 600px) {
   .container {
-    padding: 0px 22px;
+    padding: 10px 22px;
   }
   .container .grid {
     display: flex;
     flex-direction: column;
   }
 
-  .box {
-    margin-bottom: 20px;
-  }
 
   .box-4 {
     order: 4;
@@ -208,4 +210,9 @@ p {
   .container .grid .box-5 {
     order: 4;
   }
+  .container .grid .box-1 {
+    background-color: #7541c8;
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: right 25px top 3px; }
 }
