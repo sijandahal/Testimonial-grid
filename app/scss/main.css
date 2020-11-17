@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -7,7 +9,7 @@
 
 body {
   font-size: 13px;
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
   background-color: #ecf2f8;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -151,7 +153,7 @@ p {
     display: grid;
     -ms-grid-columns: 256px 256px 256px 256px;
         grid-template-columns: 256px 256px 256px 256px;
-        grid-template-areas: 'box-1 box-1 box-2 box-3' 'box-4 box-5 box-5 box-3 ';
+        grid-template-areas: "box-1 box-1 box-2 box-3" "box-4 box-5 box-5 box-3 ";
     grid-gap: 30px;
   }
 }
@@ -162,7 +164,7 @@ p {
     display: grid;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: 'box-1 box-1 box-2 box-3' 'box-4 box-5 box-5 box-3 ';
+        grid-template-areas: "box-1 box-1 box-2 box-3" "box-4 box-5 box-5 box-3 ";
     grid-gap: 30px;
   }
 }
@@ -171,7 +173,25 @@ p {
   .container .grid {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: 'box-1 box-1 box-1 box-2' 'box-4 box-5 box-5 box-3 ';
+        grid-template-areas: "box-1 box-1 box-1 box-2" "box-4 box-5 box-5 box-3 ";
+        grid-template-areas: n;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container .grid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "box-1 box-1 box-2 box-2" "box-3 box-3 box-5 box-5 ";
+  }
+  .container .grid .box-4 {
+    grid-column: 3/5;
+    -ms-grid-column: 3/5;
+  }
+  .container .grid .box-5 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1/5;
   }
 }
 
@@ -201,10 +221,10 @@ p {
         -ms-flex-order: 5;
             order: 5;
   }
-  .box-5 {
-    -webkit-box-ordinal-group: 6;
-        -ms-flex-order: 5;
-            order: 5;
+  .container .grid .box-5 {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
   }
 }
 /*# sourceMappingURL=main.css.map */
